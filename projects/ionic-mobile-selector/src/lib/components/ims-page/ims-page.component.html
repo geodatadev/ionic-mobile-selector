@@ -1,0 +1,60 @@
+<div class="modal">
+
+	<div class="header">
+
+		<div class="title">
+			<div (click)="dismiss(null, true)" class="cancel">
+				<ion-icon name="chevron-back-sharp"></ion-icon>
+			</div>
+			<div class="name">Selecione</div>
+		</div>
+
+
+		<div class="search">
+			<div class="searchbar-box">
+				<div class="search-icon">
+					<ion-icon name="search-outline"></ion-icon>
+				</div>
+				<div class="searchbar">
+					<input (input)="search($event)" placeholder="Pesquisar por Canal de distribuição..." type="text">
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="content">
+
+		<form>
+
+			<div class="items">
+
+				<div class="item" *ngFor="let group of this.list; let i = index" [hidden]="group.hide">
+
+					<div class="wrapper" (click)="select(i)">
+
+						<div class="label">
+							<label>{{ group.name }}</label>
+						</div>
+						<div class="checkbox-wrapper">
+							<div class="round">
+								<input type="checkbox" id="checkbox-{{i}}" />
+								<div class="circle" [class.selected]="group.is_selected">
+									<ion-icon name="checkmark-sharp"></ion-icon>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+		</form>
+
+	</div>
+
+	<div class="footer">
+		<button (click)="dismiss()">Finalizar</button>
+	</div>
+
+</div>

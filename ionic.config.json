@@ -1,0 +1,7 @@
+{
+  "name": "lib-geodata",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
