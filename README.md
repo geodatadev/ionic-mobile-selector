@@ -11,6 +11,73 @@
   <h4>Melhorar a vida das pessoas envolvidas no agronegócio através de tecnologia e inovação.</h4>
 </div>
 
+<br>
+<br>
+<br>
+
+# @Ionic-mobile-selector
+Um componente Ionic semelhante ao [Ionic Select](https://ionicframework.com/docs/api/components/select/Select/), que permite pesquisa de itens e scroll infinto.
+
+# Instalação
+
+Utilize o gerenciador de pacotes [npm](https://www.npmjs.com/) para fazer a instalação do componente
+
+```bash
+npm install ionic-mobile-selector
+```
+
+# Como usar
+
+## Módulo
+
+```typescript
+import { IonicMobileSelectorModule } from 'ionic-mobile-selector';
+
+@NgModule({
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    HomePageRoutingModule,
+    IonicMobileSelectorModule,
+    // SelectableGeodataModule
+  ],
+  declarations: [HomePage]
+})
+export class HomePageModule {}
+```
+
+## TS
+
+Objeto que será utilizado para a listagem
+
+```typescript
+{
+  id:1,
+  name: "Euripedes"
+}
+```
+
+## Template
+
+```html
+<ionic-mobile-selector [singleSelection]="singleSelection" [placeholder]="placeholder"  [list]="list" (imsChange)="imsChange($event)"></ionic-mobile-selector>
+
+```
+
+### Parâmetros
+
+| Parâmetro         | Descrição |
+| :--------         | :-------- |
+| `[singleSelection]` | indica se a seleção é única|
+| `[placeholder]` | placeholder que será utilizado na opção|
+| `[list]` | lista que será utilizada |
+
+### Evento
+| Evento         | Descrição |
+| :--------         | :-------- |
+| `(imsChange)` | evento que recebe as opções selecionadas|
+
 ### Ecossistema
 
 | Tecnologia    | Versão                                                        | Links  |
@@ -19,17 +86,12 @@
 | **Cordova**  | [![version](https://badgen.net/badge/version/v5.2.0/blue)](https://cordova.apache.org/) | [`cordova@changelog`](https://cordova.apache.org/) |
 | **Angular**   | [![version](https://badgen.net/badge/version/v9.0.0/blue)](https://angular.io/) | [`angular@documentation`](https://angular.io/) |
 
-### Versão Atual
-![Geodata](https://img.shields.io/badge/style-v3.1.1-green?style=for-the-badge&label=Geodata)
+# Versão Atual
+![Geodata](https://img.shields.io/badge/style-v3.1.1-green?style=for-the-badge&label=ionic-mobile-selector)
 
-### Acesso
 
-[Aplicativo Geodata (Android)](https://play.google.com/store/apps/details?id=br.com.sysout.geodata)
-[Aplicativo Geodata (IOS)](https://apps.apple.com/us/app/geodata/id1416703191)
-<br>
-[![](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/lCnBZUkvj4s)
 
-[Geodata Page](https://www.geodata.com.br/) 
-<br>
-[![](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/1isiwVD0u6s)
+# Contribuições
+
+Pull requests são bem vindos. 
 
