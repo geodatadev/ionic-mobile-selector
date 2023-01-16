@@ -14,9 +14,9 @@
 <br>
 <br>
 
-|Multi Selection| Single Selection |
+|Single Selection| Multi Selection |
 | -------------- | ---------------- |
-|![MultiSelection](https://media.giphy.com/media/C3y0GeppcXbAukDJfC/giphy.gif)| ![SingleSelection](https://media3.giphy.com/media/4xZqxPYYmhvZ70GfaI/giphy.gif)|
+|![MultiSelection](https://media.giphy.com/media/B2qK3MItF7R3yRP9RX/giphy.gif)| ![SingleSelection](https://media.giphy.com/media/hnXW6MubNTSQuqfgpV/giphy.gif)|
 
 # @Ionic-mobile-selector
 Um componente Ionic semelhante ao [Ionic Select](https://ionicframework.com/docs/api/components/select/Select/), que permite pesquisa de itens e scroll infinito.
@@ -46,7 +46,6 @@ import { IonicMobileSelectorModule } from 'ionic-mobile-selector';
     IonicModule,
     HomePageRoutingModule,
     IonicMobileSelectorModule,
-    // SelectableGeodataModule
   ],
   declarations: [HomePage]
 })
@@ -79,7 +78,7 @@ Objeto que será utilizado para a listagem
 | `[placeholder]` | placeholder que será utilizado na opção|
 | `[list]` | lista que será utilizada |
 
-### Evento
+### Eventos
 | Evento         | Descrição |
 | :--------         | :-------- |
 | `(imsChange)` | evento que recebe as opções selecionadas|
@@ -106,6 +105,6 @@ Objeto que será utilizado para a listagem
 
 # Contribuições
 
-Pull requests são bem-vindas. Para mudanças importantes, abra um problema primeiro
+Pull requests são bem vindos. Para mudanças importantes, abra um problema primeiro
 para discutir o que você gostaria de mudar.
 
