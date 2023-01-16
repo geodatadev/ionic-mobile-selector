@@ -13,10 +13,15 @@
 
 <br>
 <br>
-<br>
+
+|Multi Selection| Single Selection |
+| -------------- | ---------------- |
+|![MultiSelection](https://media.giphy.com/media/C3y0GeppcXbAukDJfC/giphy.gif)| ![SingleSelection](https://media3.giphy.com/media/4xZqxPYYmhvZ70GfaI/giphy.gif)|
 
 # @Ionic-mobile-selector
-Um componente Ionic semelhante ao [Ionic Select](https://ionicframework.com/docs/api/components/select/Select/), que permite pesquisa de itens e scroll infinto.
+Um componente Ionic semelhante ao [Ionic Select](https://ionicframework.com/docs/api/components/select/Select/), que permite pesquisa de itens e scroll infinito.
+
+<br>
 
 # Instalação
 
@@ -25,10 +30,11 @@ Utilize o gerenciador de pacotes [npm](https://www.npmjs.com/) para fazer a inst
 ```bash
 npm install ionic-mobile-selector
 ```
+<br>
 
 # Como usar
 
-## Módulo
+### Módulo
 
 ```typescript
 import { IonicMobileSelectorModule } from 'ionic-mobile-selector';
@@ -47,7 +53,7 @@ import { IonicMobileSelectorModule } from 'ionic-mobile-selector';
 export class HomePageModule {}
 ```
 
-## TS
+### TS
 
 Objeto que será utilizado para a listagem
 
@@ -58,7 +64,7 @@ Objeto que será utilizado para a listagem
 }
 ```
 
-## Template
+### Template
 
 ```html
 <ionic-mobile-selector [singleSelection]="singleSelection" [placeholder]="placeholder"  [list]="list" (imsChange)="imsChange($event)"></ionic-mobile-selector>
@@ -78,20 +84,28 @@ Objeto que será utilizado para a listagem
 | :--------         | :-------- |
 | `(imsChange)` | evento que recebe as opções selecionadas|
 
-### Ecossistema
+<br>
+
+# Ecossistema
 
 | Tecnologia    | Versão                                                        | Links  |
 | -------       | -------                                                       | :-----:|
-| **ionic**     | [![version](https://badgen.net/badge/version/v3.0.0/blue)](https://ionicframework.com/docs/) | [`ionic@changelog`](https://ionicframework.com/docs/) |
-| **Cordova**  | [![version](https://badgen.net/badge/version/v5.2.0/blue)](https://cordova.apache.org/) | [`cordova@changelog`](https://cordova.apache.org/) |
-| **Angular**   | [![version](https://badgen.net/badge/version/v9.0.0/blue)](https://angular.io/) | [`angular@documentation`](https://angular.io/) |
+| **ionic**     | [![version](https://badgen.net/badge/version/v6.0.0/blue)](https://ionicframework.com/docs/) | [`ionic@changelog`](https://ionicframework.com/docs/) |
+| **Angular**   | [![version](https://badgen.net/badge/version/v15.0.0/blue)](https://angular.io/) | [`angular@documentation`](https://angular.io/) |
 
-# Versão Atual
+
+### Versão Atual
 ![Geodata](https://img.shields.io/badge/style-v3.1.1-green?style=for-the-badge&label=ionic-mobile-selector)
 
+### Versões suportadas
 
+* Ionic 6: >= 6.0.0
+* Angular 15: >= 15.0.0
+
+<br>
 
 # Contribuições
 
-Pull requests são bem vindos. 
+Pull requests são bem-vindas. Para mudanças importantes, abra um problema primeiro
+para discutir o que você gostaria de mudar.
 
