@@ -8,11 +8,10 @@ import { ModalController, NavParams } from '@ionic/angular';
 })
 export class ImsPageComponent implements OnInit {
 
-
 	public searchInput: string = '';
 	public list: any[];
 	public data: any;
-	public singleSelect?: any
+	public singleSelection?: any
 	public openDismiss: boolean = false;
 
 	constructor(
@@ -20,7 +19,7 @@ export class ImsPageComponent implements OnInit {
 		private navParams: NavParams
 	) {
 
-		this.singleSelect = this.navParams.get('one_selection');
+		this.singleSelection = this.navParams.get('singleSelection');
 
 		this.list = this.navParams.get('list');
 
@@ -62,11 +61,15 @@ export class ImsPageComponent implements OnInit {
 	 */
 	select(index: number) {
 
-		if (this.singleSelect) {
+		if (this.singleSelection) {
+			this.list.forEach(item => item.is_selected = false);
+			this.list[index].is_selected = !this.list[index].is_selected;
+
 			this.dismiss(this.list[index])
+		} else {
+			this.list[index].is_selected = !this.list[index].is_selected;
 		}
-		
-		this.list[index].is_selected = !this.list[index].is_selected;
+
 	}
 
 	/**
@@ -78,12 +81,12 @@ export class ImsPageComponent implements OnInit {
 
 		if (!data && !forceClose) {
 
-			let data = this.list.filter((item: any) => item.is_selected);
-			return this.modalCtrl.dismiss(data);
+			let dataSelected = this.list.filter((item: any) => item.is_selected);
+			return this.modalCtrl.dismiss(dataSelected);
 
 		}
 
-		return this.modalCtrl.dismiss();
+		return this.modalCtrl.dismiss(data);
 	}
 
 }

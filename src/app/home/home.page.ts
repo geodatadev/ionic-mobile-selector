@@ -9,14 +9,16 @@ import { SelectableGeodataComponent } from 'projects/selectable-geodata/src/publ
 })
 export class HomePage {
 
+	public placeholder: string;
 	public selected: any;
-
-	public list: any = [
-	];
+	public list: any = [];
+	public singleSelection:boolean;
 
 	constructor(
 		private modalCtrl: ModalController
 	) { 
+		this.singleSelection = true;
+		this.placeholder = "Selecione um produtor"
 
 		for (let i = 0; i < 50; i++) {
 			this.list.push({
@@ -28,33 +30,37 @@ export class HomePage {
 
 	}
 
+	ngOnInit(){
+		
+	}
+
 	imsChange(dataSelected: any) {
 
 		console.log('dataSelected', dataSelected);
 
 	}
 
-	async openModal() {
+	// async openModal() {
 
-		const modal: any = await this.modalCtrl.create(({
-			component: SelectableGeodataComponent,
-			componentProps: {
-				list: this.list,
-				singleSelect: false
-			}
-		}));
+	// 	const modal: any = await this.modalCtrl.create(({
+	// 		component: SelectableGeodataComponent,
+	// 		componentProps: {
+	// 			list: this.list,
+	// 			singleSelect: false
+	// 		}
+	// 	}));
 
 
-		modal.onDidDismiss().then((info: any) => {
+	// 	modal.onDidDismiss().then((info: any) => {
 
-			if (info.data) {				
+	// 		if (info.data) {				
 				
-				this.selected = info.data;
-			}
+	// 			this.selected = info.data;
+	// 		}
 
-		})
+	// 	})
 
-		await modal.present();
-	}
+	// 	await modal.present();
+	// }
 
 }

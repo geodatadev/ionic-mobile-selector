@@ -8,12 +8,15 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class IonicMobileSelectorComponent implements OnInit {
 
 	@Input() list: any;
+	@Input() placeholder?:string;
+	@Input() singleSelection?:boolean;
 	@Output() imsChange = new EventEmitter;
 
 	constructor() { 
 	}
 
 	ngOnInit() { 
+		
 	}
 
 	// TODO comentar
