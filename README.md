@@ -16,14 +16,14 @@
 
 |Single Selection| Multi Selection |
 | -------------- | ---------------- |
-|![MultiSelection](https://media.giphy.com/media/B2qK3MItF7R3yRP9RX/giphy.gif)| ![SingleSelection](https://media.giphy.com/media/hnXW6MubNTSQuqfgpV/giphy.gif)|
+|![MultiSelection](https://media.giphy.com/media/RU4Zx5MEKMtPXihFZd/giphy.gif)| ![SingleSelection](https://media.giphy.com/media/u51c0ASt2GmOzRggoS/giphy.gif)|
 
 # @Ionic-mobile-selector
 Um componente Ionic semelhante ao [Ionic Select](https://ionicframework.com/docs/api/components/select/Select/), que permite pesquisa de itens e scroll infinito.
 
 <br>
 
-# Instalação
+## Instalação
 
 Utilize o gerenciador de pacotes [npm](https://www.npmjs.com/) para fazer a instalação do componente
 
@@ -32,7 +32,7 @@ npm install ionic-mobile-selector
 ```
 <br>
 
-# Como usar
+## Como usar
 
 ### Módulo
 
@@ -85,7 +85,7 @@ Objeto que será utilizado para a listagem
 
 <br>
 
-# Ecossistema
+## Ecossistema
 
 | Tecnologia    | Versão                                                        | Links  |
 | -------       | -------                                                       | :-----:|
@@ -103,7 +103,7 @@ Objeto que será utilizado para a listagem
 
 <br>
 
-# Contribuições
+## Contribuições
 
 Pull requests são bem vindos. Para mudanças importantes, abra um problema primeiro
 para discutir o que você gostaria de mudar.
