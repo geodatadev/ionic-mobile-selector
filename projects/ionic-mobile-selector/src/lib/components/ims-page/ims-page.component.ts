@@ -59,7 +59,7 @@ export class ImsPageComponent implements OnInit {
 	 * 
 	 * @param index 
 	 */
-	select(index: number) {
+	select(index: number) {		
 
 		if (this.singleSelection) {
 			this.list.forEach(item => item.is_selected = false);

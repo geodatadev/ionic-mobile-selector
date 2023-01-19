@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { info } from 'console';
 import { ImsPageComponent } from '../ims-page/ims-page.component';
 
 @Component({
@@ -13,6 +14,7 @@ export class ImsSelectorComponent implements OnInit {
 	@Input() public singleSelection?:boolean;
 	@Input() public list: any;
 	@Output() imsChange = new EventEmitter();
+	public selected: string = '';
 
 	constructor(
 		private modalCtrl: ModalController
@@ -37,9 +39,24 @@ export class ImsSelectorComponent implements OnInit {
 
 
 		modal.onDidDismiss().then((info: any) => {
-						
-			if (info.data) {
 
+			this.selected = '';
+						
+			if (info.data && !this.singleSelection) {
+				
+				info.data.forEach((item:any) =>{
+					this.selected += `${item.name}, `
+				});
+				
+				this.selected = this.selected.slice(0,this.selected.length - 2);
+				
+				this.placeholder = '';
+				
+				this.imsChange.emit(info.data);
+			}
+
+			else{
+				this.selected = info.data.name
 				this.imsChange.emit(info.data);
 			}
 

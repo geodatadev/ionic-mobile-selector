@@ -1,5 +1,6 @@
 .select {
     width: 100%;
+    
     .content {
         display: flex;
         justify-content: space-between;
@@ -7,11 +8,19 @@
         padding: 10px;
         font-size: 16px;
         
-        label {
+        .label{
+            white-space: nowrap;
+            width: inherit;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            
+        }
+        
+        .placeholder {
             color: rgb(182, 182, 182);
         }
 
-        
+
     }
 
 }
