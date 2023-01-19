@@ -86,13 +86,14 @@ Objeto que será utilizado para a listagem
     id:7,
     name: "João Gabriel"
   }
+]
   
 ```
 
 ### Template
 
 ```html
-<ionic-mobile-selector [singleSelection]="singleSelection" [placeholder]="placeholder"  [list]="list" (imsChange)="imsChange($event)"></ionic-mobile-selector>
+<ionic-mobile-selector [singleSelection]="singleSelection" placeholder="Here comes your placeholder!"  [list]="list" (imsChange)="imsChange($event)"></ionic-mobile-selector>
 
 ```
 
@@ -101,7 +102,7 @@ Objeto que será utilizado para a listagem
 | Parâmetro         | Descrição |
 | :--------         | :-------- |
 | `[singleSelection]` | indica se a seleção é única|
-| `[placeholder]` | placeholder que será utilizado na opção|
+| `placeholder` | placeholder que será utilizado na opção|
 | `[list]` | lista que será utilizada |
 
 ### Eventos
