@@ -57,10 +57,36 @@ export class HomePageModule {}
 Objeto que será utilizado para a listagem
 
 ```typescript
-{
-  id:1,
-  name: "Euripedes"
-}
+[
+  {
+    id:1,
+    name: "Euripedes"
+  },
+  {
+    id:2,
+    name: "Gabriel"
+  },
+  {
+    id:3,
+    name: "Elisa"
+  },
+  {
+    id:4,
+    name: "Lucas"
+  },
+  {
+    id:5,
+    name: "Felipe"
+  },
+  {
+    id:6,
+    name: "Diego"
+  },
+  {
+    id:7,
+    name: "João Gabriel"
+  }
+  
 ```
 
 ### Template
