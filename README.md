@@ -52,7 +52,7 @@ import { IonicMobileSelectorModule } from 'ionic-mobile-selector';
 export class HomePageModule {}
 ```
 
-### TS
+### Estrutura da Lista
 
 Objeto que será utilizado para a listagem
 
@@ -102,8 +102,8 @@ Objeto que será utilizado para a listagem
 | Parâmetro         | Descrição |
 | :--------         | :-------- |
 | `[singleSelection]` | indica se a seleção é única|
-| `placeholder` | placeholder que será utilizado na opção|
 | `[list]` | lista que será utilizada |
+| `placeholder` | placeholder que será utilizado na opção|
 
 ### Eventos
 | Evento         | Descrição |
@@ -112,16 +112,58 @@ Objeto que será utilizado para a listagem
 
 <br>
 
+### Resetar Seletor
+
+Para resetar o seletor, basta obter uma instância <strong>ViewChild</strong> do component e chamacar a função <strong>clear</strong> a partir da referência!
+
+```html
+<ionic-mobile-selector #mySelector ... ></ionic-mobile-selector>
+
+```
+
+```typescript
+@IonicPage()
+@Component({
+	selector: 'page-agenda',
+	templateUrl: 'agenda.html',
+})
+export class AgendaPage {
+
+	...
+
+	@ViewChild('mySelector') mySelector: IonicSelectableComponent;
+  
+  ...
+  
+  public resetMySelector(): void {
+    
+    this.mySelector.clear();
+    
+  }
+```
+<br>
+
+### Tema
+
+A estilização é setada automaticamente de acordo com a cor <strong>primária</strong> do projeto, que é definido no arquivo <strong>variables.scss</strong> de aplicativos ionic.
+
+```scss
+/** Ionic CSS Variables **/
+:root {
+  /** primary **/
+  --ion-color-primary: #28ba62;
+  ...
+}
+```
+
+</br>
+
 ## Ecossistema
 
 | Tecnologia    | Versão                                                        | Links  |
 | -------       | -------                                                       | :-----:|
 | **ionic**     | [![version](https://badgen.net/badge/version/v6.0.0/blue)](https://ionicframework.com/docs/) | [`ionic@changelog`](https://ionicframework.com/docs/) |
 | **Angular**   | [![version](https://badgen.net/badge/version/v15.0.0/blue)](https://angular.io/) | [`angular@documentation`](https://angular.io/) |
-
-
-### Versão Atual
-![Geodata](https://img.shields.io/badge/style-v3.1.1-green?style=for-the-badge&label=ionic-mobile-selector)
 
 ### Versões suportadas
 
