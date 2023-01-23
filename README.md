@@ -14,7 +14,7 @@
 <br>
 <br>
 
-|Single Selection| Multi Selection |
+|Multi Selection| Single Selection |
 | -------------- | ---------------- |
 |![MultiSelection](https://media.giphy.com/media/RU4Zx5MEKMtPXihFZd/giphy.gif)| ![SingleSelection](https://media.giphy.com/media/u51c0ASt2GmOzRggoS/giphy.gif)|
 
