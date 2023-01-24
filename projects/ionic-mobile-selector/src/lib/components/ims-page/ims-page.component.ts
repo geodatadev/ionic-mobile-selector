@@ -26,11 +26,10 @@ export class ImsPageComponent implements OnInit {
 	}
 
 	ngOnInit() {
-
 	}
 
 	/**
-	 * Atualiza lista ao digitar no campo de
+	 * Atualiza lista ao digitar o input
 	 * @param e 
 	 */
 	search(e: any) {

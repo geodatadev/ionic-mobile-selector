@@ -53,7 +53,7 @@
 
 	</div>
 
-	<div class="footer">
+	<div *ngIf="!singleSelection" class="footer">
 		<button (click)="dismiss()">Finalizar</button>
 	</div>
 

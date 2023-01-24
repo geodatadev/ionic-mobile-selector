@@ -13,12 +13,15 @@ export class ImsSelectorComponent implements OnInit {
 	@Input() public placeholder?:string;
 	@Input() public singleSelection?:boolean;
 	@Input() public list: any;
+	@Input() selectedText!: string;
 	@Output() imsChange = new EventEmitter();
-	public selected: string = '';
+	public data: any[]
 
 	constructor(
 		private modalCtrl: ModalController
-	) {}
+	) {
+		this.data = [];
+	}
 
 	ngOnInit() {
 
@@ -28,6 +31,10 @@ export class ImsSelectorComponent implements OnInit {
 	 * Abre o modal
 	 */
 	async openModal() {
+		
+		this.list.forEach((item: any) => {
+			item.hide = false;
+		})
 
 		const modal: any = await this.modalCtrl.create(({
 			component: ImsPageComponent,
@@ -37,29 +44,13 @@ export class ImsSelectorComponent implements OnInit {
 			}
 		}));
 
+		modal.onDidDismiss().then((info: any) => {			
 
-		modal.onDidDismiss().then((info: any) => {
+			if(info.data){
 
-			this.selected = '';
-						
-			if (info.data && !this.singleSelection) {
-				
-				info.data.forEach((item:any) =>{
-					this.selected += `${item.name}, `
-				});
-				
-				this.selected = this.selected.slice(0,this.selected.length - 2);
-				
-				this.placeholder = '';
-				
 				this.imsChange.emit(info.data);
 			}
-
-			else{
-				this.selected = info.data.name
-				this.imsChange.emit(info.data);
-			}
-
+			
 		})
 
 		await modal.present();

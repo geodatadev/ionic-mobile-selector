@@ -5,8 +5,8 @@
   <div class="select" (click)="openModal()">
     <div class="content">
       <div class="label">
-        <label *ngIf="this.selected">{{this.selected}}</label>
-        <label class="placeholder" *ngIf="!this.selected">{{this.placeholder}}</label>
+        <label *ngIf="selectedText != ''">{{selectedText}}</label>
+        <label *ngIf="selectedText == ''" class="placeholder" >{{placeholder}}</label>
       </div>
       <div class="icon">
         <ion-icon name="caret-down-outline"></ion-icon>

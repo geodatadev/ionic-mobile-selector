@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { SelectableGeodataComponent } from 'projects/selectable-geodata/src/public-api';
+import { IonicMobileSelectorComponent } from 'ionic-mobile-selector';
 
 @Component({
 	selector: 'app-home',
@@ -14,11 +14,13 @@ export class HomePage {
 	public list: any = [];
 	public singleSelection:boolean;
 
+	@ViewChild('mySelector') mySelector!: IonicMobileSelectorComponent;
+
 	constructor(
 		private modalCtrl: ModalController
 	) { 
 		this.singleSelection = true;
-		this.placeholder = "Selecione um produtor"
+		this.placeholder = "Selecione um produtor";
 
 		for (let i = 0; i < 50; i++) {
 			this.list.push({
@@ -28,10 +30,23 @@ export class HomePage {
 			
 		}
 
+		
+	}
+	
+	ngOnInit(){
+
+		setTimeout(() => {
+
+			console.log(this.mySelector);
+		}, 2000);
+		
+		
 	}
 
-	ngOnInit(){
-		
+	clearS() {
+
+		this.mySelector.clear();
+		console.log('limpou');
 	}
 
 	imsChange(dataSelected: any) {
