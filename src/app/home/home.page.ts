@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { IonicMobileSelectorComponent } from 'ionic-mobile-selector';
+import { SelectableGeodataComponent } from 'projects/selectable-geodata/src/public-api';
 
 @Component({
 	selector: 'app-home',
@@ -10,9 +11,11 @@ import { IonicMobileSelectorComponent } from 'ionic-mobile-selector';
 export class HomePage {
 
 	public placeholder: string;
+	public labelSelectAll: string;
 	public selected: any;
 	public list: any = [];
 	public singleSelection:boolean;
+	public hideDismiss:boolean;
 
 	@ViewChild('mySelector') mySelector!: IonicMobileSelectorComponent;
 
@@ -20,7 +23,10 @@ export class HomePage {
 		private modalCtrl: ModalController
 	) { 
 		this.singleSelection = true;
+		this.hideDismiss = true;
 		this.placeholder = "Selecione um produtor";
+		this.labelSelectAll = "Selecionar varios euris";
+
 
 		for (let i = 0; i < 50; i++) {
 			this.list.push({
@@ -29,29 +35,26 @@ export class HomePage {
 			});
 			
 		}
-
 		
 	}
-	
-	ngOnInit(){
 
-		setTimeout(() => {
+	ngOnInit() {
 
-			console.log(this.mySelector);
-		}, 2000);
-		
-		
+	}
+
+	ngAfterViewInit() {
+
+		// this.mySelector.open();
 	}
 
 	clearS() {
 
 		this.mySelector.clear();
-		console.log('limpou');
+
 	}
 
-	imsChange(dataSelected: any) {
-
-		console.log('dataSelected', dataSelected);
+	imsChange(dataSelected: any) {		
+				
 
 	}
 
@@ -61,8 +64,10 @@ export class HomePage {
 	// 		component: SelectableGeodataComponent,
 	// 		componentProps: {
 	// 			list: this.list,
-	// 			singleSelect: false
-	// 		}
+	// 			singleSelect: false,
+	// 			// canDismiss: false
+	// 		},
+	// 		// backdropDismiss: false
 	// 	}));
 
 

@@ -6,6 +6,7 @@
 
 </div> -->
 
-<button (click)="clearS()">aasfasfsaafs</button>
+<button (click)="clearS()">clear</button>
 
-<ionic-mobile-selector #mySelector [singleSelection]="" placeholder="testão"  [list]="list" (imsChange)="imsChange($event)"></ionic-mobile-selector>
+<ionic-mobile-selector #mySelector placeholder="" [list]="list" (imsChange)="imsChange($event)" [hideDismiss]='hideDismiss' [labelSelectAll]="labelSelectAll"></ionic-mobile-selector>
+<ionic-mobile-selector #mySelector placeholder="" [list]="list" (imsChange)="imsChange($event)" [labelSelectAll]="labelSelectAll" [singleSelection]="true"></ionic-mobile-selector>

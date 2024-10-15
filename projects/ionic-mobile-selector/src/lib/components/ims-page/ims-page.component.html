@@ -3,20 +3,19 @@
 	<div class="header">
 
 		<div class="title">
-			<div (click)="dismiss(null, true)" class="cancel">
+			<div (click)="dismiss(null, true)" class="cancel" [hidden]="hideDismiss">
 				<ion-icon name="chevron-back-sharp"></ion-icon>
 			</div>
 			<div class="name">Selecione</div>
 		</div>
-
-
 		<div class="search">
 			<div class="searchbar-box">
 				<div class="search-icon">
 					<ion-icon name="search-outline"></ion-icon>
 				</div>
+				
 				<div class="searchbar">
-					<input (input)="search($event)" placeholder="Pesquisar por Canal de distribuição..." type="text">
+					<input (input)="search($event)" placeholder="Pesquisar..." type="text">
 				</div>
 			</div>
 		</div>

@@ -114,7 +114,7 @@ Objeto que será utilizado para a listagem
 
 ### Resetar Seletor
 
-Para resetar o seletor, basta obter uma instância <strong>ViewChild</strong> do component e chamacar a função <strong>clear</strong> a partir da referência!
+Para resetar o seletor, basta obter uma instância <strong>ViewChild</strong> do component e chamar a função <strong>clear</strong> a partir da referência!
 
 ```html
 <ionic-mobile-selector #mySelector ... ></ionic-mobile-selector>
@@ -155,6 +155,28 @@ A estilização é setada automaticamente de acordo com a cor <strong>primária<
   ...
 }
 ```
+
+### Alterar seletor dinamicamente
+
+Assim como resetar o seletor, utilize a instância do <strong>ViewChild</strong> e chamar a função <strong>change(data)</strong>, passando um objeto com o item a vir selecionado. 
+
+```typescript
+	...
+
+	@ViewChild('mySelector') mySelector: IonicSelectableComponent;
+  
+  ...
+  
+  ngOnInit() {
+    
+    this.mySelector.change({
+      id: 1,
+      name: "João"
+    });
+    
+  }
+```
+
 
 </br>
 
