@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { info } from 'console';
 import { ImsPageComponent } from '../ims-page/ims-page.component';
 
 @Component({
@@ -22,12 +21,12 @@ export class ImsSelectorComponent implements OnInit {
 	constructor(
 		private modalCtrl: ModalController
 	) {
-		
+
 		this.data = [];
 	}
 
 	ngOnInit() {
-				
+
 	}
 
 	ngAfterViewInit(){
@@ -55,7 +54,7 @@ export class ImsSelectorComponent implements OnInit {
 
 		modal.onDidDismiss().then((info: any) => {
 
-			if (info.data) {				
+			if (info.data) {
 
 				this.imsChange.emit(info.data);
 			}
