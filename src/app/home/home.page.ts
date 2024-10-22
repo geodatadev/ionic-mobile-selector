@@ -1,7 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { IonicMobileSelectorComponent } from 'ionic-mobile-selector';
-import { SelectableGeodataComponent } from 'projects/selectable-geodata/src/public-api';
+import { IonicMobileSelectorComponent } from 'projects/ionic-mobile-selector/src/public-api';
 
 @Component({
 	selector: 'app-home',
@@ -21,7 +20,7 @@ export class HomePage {
 
 	constructor(
 		private modalCtrl: ModalController
-	) { 
+	) {
 		this.singleSelection = true;
 		this.hideDismiss = true;
 		this.placeholder = "Selecione um produtor";
@@ -33,9 +32,9 @@ export class HomePage {
 				id: i+1,
 				name: `Geodata - ${i}`
 			});
-			
+
 		}
-		
+
 	}
 
 	ngOnInit() {
@@ -53,8 +52,8 @@ export class HomePage {
 
 	}
 
-	imsChange(dataSelected: any) {		
-				
+	imsChange(dataSelected: any) {
+
 
 	}
 
@@ -73,8 +72,8 @@ export class HomePage {
 
 	// 	modal.onDidDismiss().then((info: any) => {
 
-	// 		if (info.data) {				
-				
+	// 		if (info.data) {
+
 	// 			this.selected = info.data;
 	// 		}
 
