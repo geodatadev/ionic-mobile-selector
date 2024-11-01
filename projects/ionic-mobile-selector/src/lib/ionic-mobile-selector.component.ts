@@ -13,7 +13,7 @@ export class IonicMobileSelectorComponent implements OnInit {
 	@Input() placeholder?:string;
 	@Input() singleSelection?:boolean;
 	@Input() hideDismiss?:boolean;
-	@Input() labelSelectAll: any;
+	@Input() labelSelectAll: any = "Selecionar todos";
 	public selectedText: string;
 	@Output() imsChange = new EventEmitter;
 	constructor() { 		
