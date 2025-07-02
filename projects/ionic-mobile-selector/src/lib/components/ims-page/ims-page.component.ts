@@ -64,9 +64,12 @@ export class ImsPageComponent implements OnInit {
 
 		for (let i = 0; i < this.list.length; i++) {
 
-			if (key) {
+			let sanitizedTitle = this.removeAccents(this.list[i].name).toLowerCase();
+			let sanitizedInput = this.removeAccents(key).toLowerCase();
 
-				if (!this.list[i].name.toLowerCase().includes(key)) {
+			if (sanitizedInput) {
+
+				if (!sanitizedTitle.includes(sanitizedInput)) {
 					this.list[i].hide = true;
 				} else {
 					this.list[i].hide = false;
@@ -77,6 +80,10 @@ export class ImsPageComponent implements OnInit {
 
 		}
 
+	}
+
+	removeAccents(str: string): string {
+		return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 	}
 
 	/**
